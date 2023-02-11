@@ -18,3 +18,23 @@ const purple = document.getElementById("make-purple");
 purple.onclick = function purple() {
 	document.body.style.backgroundColor = "purple";
 };
+
+// option 5: add event listener
+const makePinkBtn = document.getElementById("make-pink");
+
+makePinkBtn.addEventListener("click", makePinkColor);
+function makePinkColor() {
+	document.body.style.backgroundColor = "pink";
+}
+
+// option 6: add event listener with function
+const makeGreenBtn = document.getElementById("make-green");
+
+makeGreenBtn.addEventListener("click", function makeGreenColor() {
+	document.body.style.backgroundColor = "green";
+});
+
+// Option 7: Shortcut of handle event
+document.getElementById("make-grey").addEventListener("click", () => {
+	document.body.style.backgroundColor = "grey";
+});
