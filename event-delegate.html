@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+
+<body>
+    <h1>Explore event delegate</h1>
+    <section>
+        <ul id="ul">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Delectus, quasi dolore.</li>
+            <li class="item">Deserunt, aperiam corporis.</li>
+            <li class="item">Ex, ad sit!</li>
+            <li class="item">Voluptatibus, debitis architecto.</li>
+        </ul>
+        <br>
+        <input type="text" name="" id="input">
+        <button id="btn">Add</button>
+    </section>
+    <script>
+        // const items = document.getElementsByClassName("item");
+        // for (const item of items) {
+        //     console.log(item);
+        //     item.addEventListener("click", function (event) {
+        //         event.target.parentNode.removeChild(event.target);
+        //     });
+        // }
+
+        document.getElementById("ul").addEventListener("click", function (event) {
+            event.target.parentNode.removeChild(event.target);
+        });
+
+        const btn = document.getElementById("btn").addEventListener("click", function (event) {
+            const input = document.getElementById("input");
+            const inputText = input.value;
+
+            const li = document.createElement("li");
+            li.innerText = inputText;
+            li.setAttribute("class", "item");
+
+            const ul = document.getElementById("ul");
+            ul.appendChild(li);
+
+            input.value = "";
+        });
+
+
+    </script>
+</body>
+
+</html>
